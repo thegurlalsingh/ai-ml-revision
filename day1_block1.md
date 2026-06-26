@@ -281,7 +281,7 @@ Every time you multiply by the matrix, the dominant force scales up exponentiall
 **Question:** "Why does repeated matrix multiplication converge to the dominant eigenvector?"  
 **Answer:** "Any random vector is made up of a mix of different eigenvectors. When we multiply the vector by the matrix repeatedly, every component gets scaled by its own eigenvalue over and over again. The component with the largest eigenvalue grows exponentially faster than all the others. Eventually, it completely takes over, forcing the vector to align perfectly with the dominant eigenvector direction."
 
-## 1. Matrix Rank
+## 14. Matrix Rank
 
 ### Intuition
 Rank tells us:
@@ -307,7 +307,7 @@ Datasets often contain correlated features.
 
 ---
 
-## 2. Column Space
+## 15. Column Space
 
 ### Definition
 Column space is defined as **all possible outputs $Ax$**. In some redundant or restricted cases, the column space is just a line.
@@ -320,7 +320,7 @@ The column space contains all vectors you can reach using the transformation $Ax
 
 ---
 
-## 3. Null Space (Kernel)
+## 16. Null Space (Kernel)
 
 This is one of the most important concepts in linear algebra for machine learning.
 
@@ -353,7 +353,7 @@ In this case, one dimension vanished into the null space ($3 \rightarrow 2$, so 
 
 ---
 
-## 4. Why Inverse Sometimes Doesn't Exist
+## 17. Why Inverse Sometimes Doesn't Exist
 
 Interviewers love asking this specific question. An inverse exists only when a matrix is **full rank**:
 $$\text{rank}(A) = n$$
@@ -368,7 +368,7 @@ $$A = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix}$$
 
 ---
 
-## 5. Pseudoinverse
+## 18. Pseudoinverse
 
 Now we arrive at the practical machine learning application. Suppose the standard matrix inverse $A^{-1}$ does not exist. What do we do?
 
@@ -393,7 +393,7 @@ This formulation is exactly the formulation for **least squares**.
 
 ---
 
-## 6. SVD Refresher
+## 19. SVD Refresher
 
 Remember the Singular Value Decomposition (SVD) formula:
 $$A = U\Sigma V^T$$
@@ -433,7 +433,7 @@ $$w = (X^TX)^{-1}X^Ty$$
 
 ---
 
-## 7. Why Do We Need a Matrix Norm?
+## 20. Why Do We Need a Matrix Norm?
 
 For a standard vector like $[3, 4]$, its norm is $5$, which tells us its geometric length. Easy.
 
@@ -501,7 +501,7 @@ Singular values tell us **how much different directional signals get amplified**
 
 **Conclusion:** Singular values tell us whether information traveling through our models is blowing up or dying out.
 
-## 1. The Big Picture
+## 21. The Big Picture of Gradients
 
 ### Mountain Analogy
 Suppose you're standing on a mountain. Your goal is to reach the **lowest point (minimum loss)**. The mountain is your **loss function**.
@@ -589,7 +589,7 @@ Notice the **minus sign**. We walk opposite to the gradient because we want to g
 
 ---
 
-## 2. Directional Derivative
+## 22. Directional Derivative
 
 Suppose you're on a mountain. The gradient tells you the steepest uphill direction. But what if you decide to walk in some **other** direction?
 
@@ -628,7 +628,7 @@ So, $\nabla f \cdot u$ measures how much your chosen direction aligns with the s
 
 ---
 
-## 3. Jacobian
+## 23. Jacobian
 
 Now suppose the output of our function is also a vector.
 * **Earlier:** Input $x \rightarrow$ Output $f(x)$ (One output)
@@ -673,7 +673,7 @@ Each layer maps one vector to another vector. The derivative of that structural 
 
 ---
 
-## 4. Hessian
+## 24. Hessian
 
 The gradient tells us the slope, but does the slope stay the same? No. The mountain can curve. The **Hessian** measures that curvature.
 
@@ -719,7 +719,7 @@ Suppose you are at a point where the **gradient is zero** ($\nabla f = 0$). Are 
 
 ---
 
-## 5. Chain Rule for Vectors
+## 25. Chain Rule for Vectors
 
 ### 1. First, Remember the Normal Chain Rule
 Suppose:
@@ -868,7 +868,7 @@ Turning Gear 1 turns Gear 2; Gear 2 turns Gear 3; Gear 3 turns Gear 4. The total
 
 ---
 
-## 6. Taylor Expansion
+## 26. Taylor Expansion
 
 ### 1. Why Do We Need Taylor Expansion?
 Suppose you're training a neural network.
@@ -1017,7 +1017,7 @@ is highly valuable because it estimates the new loss value following an update b
 
 ---
 
-## 7. Convexity
+## 27. Convexity
 
 ### 1. What is Convexity?
 Imagine you're hiking. Landscapes generally fall into two categories:
@@ -1163,7 +1163,7 @@ The final quadratic term ($\frac{1}{2} \Delta^T H \Delta$) isolates the local cu
 
 ---
 
-## 8. The Ultimate Summary (How It All Connects)
+## 28. The Ultimate Summary (How It All Connects)
 
 All the optimization concepts you have reviewed assemble into a single unified framework:
 * **The Gradient** tells you **which direction** to move locally to change the function value.
